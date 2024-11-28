@@ -1,0 +1,7 @@
+.cache
+.next
+build
+coverage
+dist
+logs
+node_modules

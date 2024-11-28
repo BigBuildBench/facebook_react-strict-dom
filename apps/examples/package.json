@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "examples",
+  "version": "0.0.0",
+  "main": "./src/app/index.js",
+  "scripts": {
+    "dev": "expo start --clear",
+    "dev:android": "expo start --android --clear",
+    "dev:ios": "expo start --ios --clear",
+    "dev:web": "expo start --web --clear"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2"
+  }
+}

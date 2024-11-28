@@ -1,0 +1,47 @@
+{
+  "name": "react-strict-dom",
+  "version": "0.0.29",
+  "description": "React Strict DOM",
+  "exports": {
+    ".": {
+      "react-native": "./dist/native/index.js",
+      "default": "./dist/dom/index.js"
+    },
+    "./babel-preset": "./babel/index.js",
+    "./runtime": "./dist/dom/runtime.js",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup --config ./tools/rollup.config.mjs",
+    "clean": "del-cli \"./build/*\" \"./dist/*\"",
+    "dev": "npm run build -- --watch",
+    "jest": "jest --config ./tools/jest.config.js",
+    "jest:report": "jest --config ./tools/jest.config.js --collect-coverage",
+    "prebuild": "npm run clean && generate-types -i src/ -o dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@stylexjs/babel-plugin": "^0.7.5",
+    "rollup": "^4.22.4",
+    "react-test-renderer": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": ">=0.75.2"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/facebook/react-strict-dom/tree/main/packages/react-strict-dom",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/react-strict-dom.git"
+  }
+}
